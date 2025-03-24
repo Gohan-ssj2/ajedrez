@@ -9,6 +9,33 @@ void iniciarTablero(char tablero[BOARD_SIZE][BOARD_SIZE]) {
 			else tablero[j][i] = '*';
 		}
 	}
+	//Definimos posiciones de piezas eje x
+	const short torreL = 0;
+	const short torreR = BOARD_SIZE - 1;
+	const short caballoL = 1;
+	const short caballoR = BOARD_SIZE-2;
+	const short alfilerL = 2;
+	const short alfilerR = BOARD_SIZE - 3;
+	const short dama = 3;
+	const short rey = 4;
+	//Creamos las piezas en el tablero (BLANCAS)
+	tablero[BOARD_SIZE-8][torreL] = TORRE_BLANCA;
+	tablero[BOARD_SIZE - 8][torreR] = TORRE_BLANCA;
+	tablero[BOARD_SIZE - 8][caballoL] = CABALLO_BLANCO;
+	tablero[BOARD_SIZE - 8][caballoR] = CABALLO_BLANCO;
+	tablero[BOARD_SIZE - 8][alfilerL] = ALFILER_BLANCO;
+	tablero[BOARD_SIZE - 8][alfilerR] = ALFILER_BLANCO;
+	tablero[BOARD_SIZE - 8][dama] = DAMA_BLANCA;
+	tablero[BOARD_SIZE - 8][rey] = REY_BLANCO;
+	//Creamos las piezas en el tablero (NEGRAS)
+	tablero[BOARD_SIZE - 1][torreL] = TORRE_NEGRO;
+	tablero[BOARD_SIZE - 1][torreR] = TORRE_NEGRO;
+	tablero[BOARD_SIZE - 1][caballoL] = CABALLO_NEGRO;
+	tablero[BOARD_SIZE - 1][caballoR] = CABALLO_NEGRO;
+	tablero[BOARD_SIZE - 1][alfilerL] = ALFILER_NEGRO;
+	tablero[BOARD_SIZE - 1][alfilerR] = ALFILER_NEGRO;
+	tablero[BOARD_SIZE - 1][dama] = DAMA_NEGRO;
+	tablero[BOARD_SIZE - 1][rey] = REY_NEGRO;
 }
 void verTablero(char tablero[BOARD_SIZE][BOARD_SIZE]) {
 	std::cout << ' ' << ' ';

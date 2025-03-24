@@ -1,5 +1,8 @@
-#include<iostream>
+#include"cons.h"
+#include"tablero.h"
 int main() {
-	std::cout << "Buenas enti" << std::endl;
-	return 0;
+	char tablero[BOARD_SIZE][BOARD_SIZE];
+	iniciarTablero(tablero);
+	verTablero(tablero);
+
 }

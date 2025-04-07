@@ -1,2 +1,2 @@
 ﻿  tablero.cpp
-  ajedrez.vcxproj -> E:\programacion\git_ajedrez\ajedrez\x64\Debug\ajedrez.exe
+C:\Users\DavidAlonsoGomez\Desktop\git_ajedrez\ajedrez\ajedrez\tablero.cpp(87): error C4716: 'obtenerPieza': must return a value

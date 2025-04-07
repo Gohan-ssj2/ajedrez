@@ -53,3 +53,35 @@ void verTablero(char tablero[BOARD_SIZE][BOARD_SIZE]) {
 		std::cout << std::endl;
 	}
 }
+
+posicion obtenerPieza(char tablero[BOARD_SIZE][BOARD_SIZE], bool turnoBlanca) {
+	posicion obtenerPiezaUsuario;
+	
+	bool pillePieza = true;
+	do
+	{
+		pillePieza = true;
+		std::cout << "-----------------" << std::endl;
+		std::cout << " Elige una pieza: " << std::endl;
+		std::cout << " X: ";
+		std::cin >> obtenerPiezaUsuario.x;
+		std::cout << " Y: ";
+		std::cin >> obtenerPiezaUsuario.y;
+		
+		obtenerPiezaUsuario.x--;
+		obtenerPiezaUsuario.y--;
+		obtenerPiezaUsuario.y = BOARD_SIZE - obtenerPiezaUsuario.y;
+		if (obtenerPiezaUsuario.x<1 || obtenerPiezaUsuario.x>BOARD_SIZE || obtenerPiezaUsuario.y<1 || obtenerPiezaUsuario.y>BOARD_SIZE) {
+			std::cout << "INPUT INVALIDO" << std::endl;
+			continue;
+		}
+		/*else if(turnoBlanca&&tablero[obtenerPiezaUsuario.x][obtenerPiezaUsuario.y]>) {
+			
+				pillePieza = false;
+
+
+			}*/
+	} while (!pillePieza);
+
+	
+}

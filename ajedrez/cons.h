@@ -1,8 +1,13 @@
 #pragma once
 //Defines
 #define BOARD_SIZE 8
+#define VACIO '*'
+#define ASCII_BLANCO_NEGRO 32
+#define ASCII_ABC_NUM 32
 //Includes
 #include<iostream>
+#include"utils.h"
+#include<windows.h>
 //Piezas blancas
 #define PEON_BLANCO 'P'
 #define TORRE_BLANCA 'T'

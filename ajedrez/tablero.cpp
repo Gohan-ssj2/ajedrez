@@ -54,8 +54,8 @@ void verTablero(char tablero[BOARD_SIZE][BOARD_SIZE]) {
 	}
 }
 
-posicion obtenerPieza(char tablero[BOARD_SIZE][BOARD_SIZE], bool turnoBlanca) {
-	posicion obtenerPiezaUsuario;
+posicion obtenerPieza(char tablero[BOARD_SIZE][BOARD_SIZE], bool esTurnoBlanca) {
+	posicion obtenerPiezaUsuario; 
 	
 	bool pillePieza = true;
 	do
@@ -75,13 +75,28 @@ posicion obtenerPieza(char tablero[BOARD_SIZE][BOARD_SIZE], bool turnoBlanca) {
 			std::cout << "INPUT INVALIDO" << std::endl;
 			continue;
 		}
-		/*else if(turnoBlanca&&tablero[obtenerPiezaUsuario.x][obtenerPiezaUsuario.y]>) {
-			
-				pillePieza = false;
-
-
-			}*/
+		else {
+			pillePieza = false;
+		}
+		
 	} while (!pillePieza);
-
+	return obtenerPiezaUsuario;
 	
+}
+
+bool moverPieza(char tablero[BOARD_SIZE][BOARD_SIZE], posicion origen, posicion destino, bool esTurnoBlanca) {
+	char pieza = tablero[origen.y][origen.x];
+	bool esPiezaBlanca = (pieza >= 'A' && pieza <= 'Z');
+	if ((esTurnoBlanca && !esPiezaBlanca) || (!esTurnoBlanca && esPiezaBlanca)) {
+		std::cout << "La pieza elegida no te pertenece" << std::endl;
+		return false;
+
+	}
+	if (tablero[destino.y][destino.x] != VACIO) {
+		std::cout << "El espacio elegido esta ocupado" << std::endl;
+		return false;
+	}
+	tablero[destino.y][destino.x] = pieza;
+	tablero[origen.y][origen.x] = VACIO;
+	return true;
 }

@@ -7,9 +7,17 @@ int main() {
 	iniciarTablero(tablero);
 	do {
 		verTablero(tablero);
-		posicion obtenerPiezaUsuario, elegirPiezaUsuario;
-		
-		
+		posicion origen = obtenerPieza(tablero, esTurnoBlanca);
+		posicion destino;
+		std::cout << "Elige destino (X Y): ";
+		std::cin >> destino.x;
+		std::cin>> destino.y;
+		destino.x--; destino.y--;
+		destino.y = BOARD_SIZE - destino.y;
+
+		if (moverPieza(tablero, origen, destino, esTurnoBlanca)) {
+			esTurnoBlanca = !esTurnoBlanca;
+		}
 		
 		
 		system("cls");

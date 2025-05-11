@@ -1,2 +1,4 @@
-﻿  tablero.cpp
-  ajedrez.vcxproj -> E:\programacion\git_ajedrez\ajedrez\x64\Debug\ajedrez.exe
+﻿  main.cpp
+  tablero.cpp
+  Generando código...
+  ajedrez.vcxproj -> C:\Users\itsma\OneDrive\Documentos\GitHub\ajedrez\x64\Debug\ajedrez.exe

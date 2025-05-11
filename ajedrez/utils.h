@@ -1,5 +1,5 @@
 #pragma once
 struct posicion {
-	int x;
-	int y;
+    int x;
+    int y;
 };

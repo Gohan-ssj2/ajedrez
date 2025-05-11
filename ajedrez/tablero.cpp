@@ -1,102 +1,127 @@
-#include"cons.h"
-void iniciarTablero(char tablero[BOARD_SIZE][BOARD_SIZE]) {
+#include "cons.h"
 
-	for (int i = 0;i < BOARD_SIZE; i++) {
-		for (int j = 0; j < BOARD_SIZE; j++)
-		{
-			if (j == BOARD_SIZE-2) tablero[j][i] = PEON_NEGRO;
-			else if (j == 1) tablero[j][i] = PEON_BLANCO;
-			else tablero[j][i] = '*';
-		}
-	}
-	//Definimos posiciones de piezas eje x
-	const short torreL = 0;
-	const short torreR = BOARD_SIZE - 1;
-	const short caballoL = 1;
-	const short caballoR = BOARD_SIZE-2;
-	const short alfilerL = 2;
-	const short alfilerR = BOARD_SIZE - 3;
-	const short dama = 3;
-	const short rey = 4;
-	//Creamos las piezas en el tablero (BLANCAS)
-	tablero[BOARD_SIZE-8][torreL] = TORRE_BLANCA;
-	tablero[BOARD_SIZE - 8][torreR] = TORRE_BLANCA;
-	tablero[BOARD_SIZE - 8][caballoL] = CABALLO_BLANCO;
-	tablero[BOARD_SIZE - 8][caballoR] = CABALLO_BLANCO;
-	tablero[BOARD_SIZE - 8][alfilerL] = ALFILER_BLANCO;
-	tablero[BOARD_SIZE - 8][alfilerR] = ALFILER_BLANCO;
-	tablero[BOARD_SIZE - 8][dama] = DAMA_BLANCA;
-	tablero[BOARD_SIZE - 8][rey] = REY_BLANCO;
-	//Creamos las piezas en el tablero (NEGRAS)
-	tablero[BOARD_SIZE - 1][torreL] = TORRE_NEGRO;
-	tablero[BOARD_SIZE - 1][torreR] = TORRE_NEGRO;
-	tablero[BOARD_SIZE - 1][caballoL] = CABALLO_NEGRO;
-	tablero[BOARD_SIZE - 1][caballoR] = CABALLO_NEGRO;
-	tablero[BOARD_SIZE - 1][alfilerL] = ALFILER_NEGRO;
-	tablero[BOARD_SIZE - 1][alfilerR] = ALFILER_NEGRO;
-	tablero[BOARD_SIZE - 1][dama] = DAMA_NEGRO;
-	tablero[BOARD_SIZE - 1][rey] = REY_NEGRO;
+void iniciarTablero(char tablero[BOARD_SIZE][BOARD_SIZE]) {
+    for (int i = 0; i < BOARD_SIZE; i++) {
+        for (int j = 0; j < BOARD_SIZE; j++) {
+            tablero[i][j] = VACIO;
+        }
+    }
+
+    for (int i = 0; i < BOARD_SIZE; i++) {
+        tablero[1][i] = PEON_BLANCO;
+        tablero[6][i] = PEON_NEGRO;
+    }
+
+    tablero[0][0] = TORRE_BLANCA;
+    tablero[0][1] = CABALLO_BLANCA;
+    tablero[0][2] = ALFIL_BLANCA;
+    tablero[0][3] = DAMA_BLANCA;
+    tablero[0][4] = REY_BLANCA;
+    tablero[0][5] = ALFIL_BLANCA;
+    tablero[0][6] = CABALLO_BLANCA;
+    tablero[0][7] = TORRE_BLANCA;
+
+    tablero[7][0] = TORRE_NEGRO;
+    tablero[7][1] = CABALLO_NEGRO;
+    tablero[7][2] = ALFIL_NEGRO;
+    tablero[7][3] = DAMA_NEGRO;
+    tablero[7][4] = REY_NEGRO;
+    tablero[7][5] = ALFIL_NEGRO;
+    tablero[7][6] = CABALLO_NEGRO;
+    tablero[7][7] = TORRE_NEGRO;
 }
+
 void verTablero(char tablero[BOARD_SIZE][BOARD_SIZE]) {
-	std::cout << ' ' << ' ';
-	for (int i = 0; i < BOARD_SIZE; i++)
-	{
-		std::cout << i + 1 << ' ';
-	}
-	std::cout << std::endl;
-	for (int i = 0;i < BOARD_SIZE; i++) {
-		std::cout << BOARD_SIZE - i << ' ';
-		for (int j = 0; j < BOARD_SIZE; j++)
-		{
-			std::cout << tablero[i][j] << ' ';
-		}
-		std::cout << std::endl;
-	}
+    std::cout << "  ";
+    for (int i = 0; i < BOARD_SIZE; i++)
+        std::cout << i + 1 << " ";
+    std::cout << std::endl;
+
+    for (int i = BOARD_SIZE - 1; i >= 0; i--) {
+        std::cout << i + 1 << " ";
+        for (int j = 0; j < BOARD_SIZE; j++) {
+            std::cout << tablero[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
 }
 
 posicion obtenerPieza(char tablero[BOARD_SIZE][BOARD_SIZE], bool esTurnoBlanca) {
-	posicion obtenerPiezaUsuario; 
-	
-	bool pillePieza = true;
-	do
-	{
-		pillePieza = true;
-		std::cout << "-----------------" << std::endl;
-		std::cout << " Elige una pieza: " << std::endl;
-		std::cout << " X: ";
-		std::cin >> obtenerPiezaUsuario.x;
-		std::cout << " Y: ";
-		std::cin >> obtenerPiezaUsuario.y;
-		
-		obtenerPiezaUsuario.x--;
-		obtenerPiezaUsuario.y--;
-		obtenerPiezaUsuario.y = BOARD_SIZE - obtenerPiezaUsuario.y;
-		if (obtenerPiezaUsuario.x<1 || obtenerPiezaUsuario.x>BOARD_SIZE || obtenerPiezaUsuario.y<1 || obtenerPiezaUsuario.y>BOARD_SIZE) {
-			std::cout << "INPUT INVALIDO" << std::endl;
-			continue;
-		}
-		else {
-			pillePieza = false;
-		}
-		
-	} while (!pillePieza);
-	return obtenerPiezaUsuario;
-	
+    posicion p;
+    std::cout << "Elige una pieza (X Y): ";
+    std::cin >> p.x >> p.y;
+
+    p.x--;
+    p.y--;
+
+    return p;
 }
 
 bool moverPieza(char tablero[BOARD_SIZE][BOARD_SIZE], posicion origen, posicion destino, bool esTurnoBlanca) {
-	char pieza = tablero[origen.y][origen.x];
-	bool esPiezaBlanca = (pieza >= 'A' && pieza <= 'Z');
-	if ((esTurnoBlanca && !esPiezaBlanca) || (!esTurnoBlanca && esPiezaBlanca)) {
-		std::cout << "La pieza elegida no te pertenece" << std::endl;
-		return false;
+    char pieza = tablero[origen.y][origen.x];
+    char destinoPieza = tablero[destino.y][destino.x];
 
-	}
-	if (tablero[destino.y][destino.x] != VACIO) {
-		std::cout << "El espacio elegido esta ocupado" << std::endl;
-		return false;
-	}
-	tablero[destino.y][destino.x] = pieza;
-	tablero[origen.y][origen.x] = VACIO;
-	return true;
+    if (pieza == VACIO || (esTurnoBlanca && !isupper(pieza)) || (!esTurnoBlanca && !islower(pieza))) {
+        std::cout << "Movimiento inválido: no es tu pieza." << std::endl;
+        return false;
+    }
+
+    if (destinoPieza != VACIO && ((isupper(pieza) && isupper(destinoPieza)) || (islower(pieza) && islower(destinoPieza)))) {
+        std::cout << "Movimiento inválido: no puedes comer tus propias piezas." << std::endl;
+        return false;
+    }
+
+    int dx = destino.x - origen.x;
+    int dy = destino.y - origen.y;
+
+    char piezaTipo = toupper(pieza);
+    bool movimientoValido = false;
+
+    switch (piezaTipo) {
+    case 'P':
+        if (esTurnoBlanca) {
+            if (dx == 0 && dy == 1 && destinoPieza == VACIO) movimientoValido = true;
+            else if (abs(dx) == 1 && dy == 1 && destinoPieza != VACIO) movimientoValido = true;
+        }
+        else {
+            if (dx == 0 && dy == -1 && destinoPieza == VACIO) movimientoValido = true;
+            else if (abs(dx) == 1 && dy == -1 && destinoPieza != VACIO) movimientoValido = true;
+        }
+        break;
+    case 'T':
+        if ((dx == 0 || dy == 0)) movimientoValido = true;
+        break;
+    case 'C':
+        if ((abs(dx) == 2 && abs(dy) == 1) || (abs(dx) == 1 && abs(dy) == 2)) movimientoValido = true;
+        break;
+    case 'A':
+        if (abs(dx) == abs(dy)) movimientoValido = true;
+        break;
+    case 'D':
+        if (abs(dx) == abs(dy) || dx == 0 || dy == 0) movimientoValido = true;
+        break;
+    case 'R':
+        if (abs(dx) <= 1 && abs(dy) <= 1) movimientoValido = true;
+        break;
+    }
+
+    if (!movimientoValido) {
+        std::cout << "Movimiento no permitido para esa pieza." << std::endl;
+        return false;
+    }
+
+    if (destinoPieza == REY_BLANCA || destinoPieza == REY_NEGRO) {
+        std::cout << "¡Rey eliminado! Fin del juego." << std::endl;
+        if (esTurnoBlanca) {
+            std::cout << "Han ganado las blancas." << std::endl;
+        }
+        else {
+            std::cout << "Han ganado las negras." << std::endl;
+        }
+        exit(0);
+    }
+
+    tablero[destino.y][destino.x] = pieza;
+    tablero[origen.y][origen.x] = VACIO;
+    return true;
 }

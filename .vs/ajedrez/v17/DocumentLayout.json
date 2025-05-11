@@ -1,10 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\programacion\\git_ajedrez\\ajedrez\\",
+  "WorkspaceRootPath": "E:\\programacion\\git_ajedrez\\ajedrez\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0C87E40C-1218-4393-9C97-2E62691CA602}|ajedrez\\ajedrez.vcxproj|D:\\programacion\\git_ajedrez\\ajedrez\\ajedrez\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{0C87E40C-1218-4393-9C97-2E62691CA602}|ajedrez\\ajedrez.vcxproj|E:\\programacion\\git_ajedrez\\ajedrez\\ajedrez\\tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0C87E40C-1218-4393-9C97-2E62691CA602}|ajedrez\\ajedrez.vcxproj|solutionrelative:ajedrez\\tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C87E40C-1218-4393-9C97-2E62691CA602}|ajedrez\\ajedrez.vcxproj|E:\\programacion\\git_ajedrez\\ajedrez\\ajedrez\\tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0C87E40C-1218-4393-9C97-2E62691CA602}|ajedrez\\ajedrez.vcxproj|solutionrelative:ajedrez\\tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C87E40C-1218-4393-9C97-2E62691CA602}|ajedrez\\ajedrez.vcxproj|E:\\programacion\\git_ajedrez\\ajedrez\\ajedrez\\cons.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0C87E40C-1218-4393-9C97-2E62691CA602}|ajedrez\\ajedrez.vcxproj|solutionrelative:ajedrez\\cons.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C87E40C-1218-4393-9C97-2E62691CA602}|ajedrez\\ajedrez.vcxproj|E:\\programacion\\git_ajedrez\\ajedrez\\ajedrez\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0C87E40C-1218-4393-9C97-2E62691CA602}|ajedrez\\ajedrez.vcxproj|solutionrelative:ajedrez\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C87E40C-1218-4393-9C97-2E62691CA602}|ajedrez\\ajedrez.vcxproj|E:\\programacion\\git_ajedrez\\ajedrez\\ajedrez\\utils.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0C87E40C-1218-4393-9C97-2E62691CA602}|ajedrez\\ajedrez.vcxproj|solutionrelative:ajedrez\\utils.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,23 +30,67 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "cons.h",
+              "DocumentMoniker": "E:\\programacion\\git_ajedrez\\ajedrez\\ajedrez\\cons.h",
+              "RelativeDocumentMoniker": "ajedrez\\cons.h",
+              "ToolTip": "E:\\programacion\\git_ajedrez\\ajedrez\\ajedrez\\cons.h",
+              "RelativeToolTip": "ajedrez\\cons.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-11T20:23:44.408Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "tablero.h",
+              "DocumentMoniker": "E:\\programacion\\git_ajedrez\\ajedrez\\ajedrez\\tablero.h",
+              "RelativeDocumentMoniker": "ajedrez\\tablero.h",
+              "ToolTip": "E:\\programacion\\git_ajedrez\\ajedrez\\ajedrez\\tablero.h",
+              "RelativeToolTip": "ajedrez\\tablero.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-11T20:23:44.046Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "utils.h",
+              "DocumentMoniker": "E:\\programacion\\git_ajedrez\\ajedrez\\ajedrez\\utils.h",
+              "RelativeDocumentMoniker": "ajedrez\\utils.h",
+              "ToolTip": "E:\\programacion\\git_ajedrez\\ajedrez\\ajedrez\\utils.h",
+              "RelativeToolTip": "ajedrez\\utils.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-05-11T20:23:43.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "main.cpp",
+              "DocumentMoniker": "E:\\programacion\\git_ajedrez\\ajedrez\\ajedrez\\main.cpp",
+              "RelativeDocumentMoniker": "ajedrez\\main.cpp",
+              "ToolTip": "E:\\programacion\\git_ajedrez\\ajedrez\\ajedrez\\main.cpp",
+              "RelativeToolTip": "ajedrez\\main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-11T20:07:49.784Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "main.cpp",
-              "DocumentMoniker": "D:\\programacion\\git_ajedrez\\ajedrez\\ajedrez\\main.cpp",
-              "RelativeDocumentMoniker": "ajedrez\\main.cpp",
-              "ToolTip": "D:\\programacion\\git_ajedrez\\ajedrez\\ajedrez\\main.cpp",
-              "RelativeToolTip": "ajedrez\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "tablero.cpp",
+              "DocumentMoniker": "E:\\programacion\\git_ajedrez\\ajedrez\\ajedrez\\tablero.cpp",
+              "RelativeDocumentMoniker": "ajedrez\\tablero.cpp",
+              "ToolTip": "E:\\programacion\\git_ajedrez\\ajedrez\\ajedrez\\tablero.cpp",
+              "RelativeToolTip": "ajedrez\\tablero.cpp",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAG8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-24T08:19:17.532Z",
+              "WhenOpened": "2025-05-11T20:07:37.759Z",
               "EditorCaption": ""
             }
           ]
